@@ -1,20 +1,49 @@
-function hasTargetSum(array, target) {
-  // Write your algorithm here
+function hasTargetsum(array,target){
+  // create an object of numbers already seen 
+  const seenNumbers = {}
+  for(number of array){
+    // n steps
+    const complement = target -number;
+    if(complement in seenNumbers)return true
+
+    seenNumbers[number] =true
+  } 
+
+  return false
 }
+// function hasTargetSum(array, target) {
+//   for(let i = 0;i<array.length;i++){
+//     const complement = target -array[i];
+//     for (let j= i+i;arrray.length;j++){
+//       if (array[j]=== complement)return true    
+//     }
+//   }
+//   return false 
+// }
 
 /* 
-  Write the Big O time complexity of your function here
+ Runtime: O(n^2)
+ Space:O(n)
+
+
+ Runtime :O(n)
 */
 
 /* 
-  Add your pseudocode here
+  hasTargetSum([1,2,3,4,5],6)
+  seenNumbers ={
+    1:true,
+    2:true,
+    3:true,
+
+  }
+  create an object of numbers already seen 
+   write a function that iterates through an array 
+   for the current number ,identify a complement that add up to the  target (complement = target -num )
+   check if that complement exist if it does return true 
+   otherwise return false
 */
 
-/*
-  Add written explanation of your solution here
-*/
-
-// You can run `node index.js` to view these console logs
 if (require.main === module) {
   // add your own custom tests in here
   console.log("Expecting: true");
